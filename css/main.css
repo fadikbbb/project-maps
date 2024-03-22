@@ -301,19 +301,20 @@ header .logo img {
   color: black;
 }
 .two .container-content .right-content .box {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
 .two .container-content .right-content .box .line-row {
   border: 1px dashed gray;
-  height: 1%;
+  height: 1px;
   align-self: center;
 }
 .two .container-content .right-content .box .line-column {
   border: 1px dashed gray;
   height: 100%;
-  width: 1%;
+  width: 1px;
   justify-self: center;
   align-self: center;
 }
@@ -338,7 +339,8 @@ header .logo img {
 .two .container-content .right-content .box img {
   justify-self: center;
   align-self: center;
-  width: 100px;
+  width: 100%;
+  max-width: 130px;
   margin: 30px;
 }
 .two .btns {
@@ -869,6 +871,7 @@ footer .container-content .contact {
   margin: auto;
   position: relative;
   top: 100px;
+  z-index: 2;
   background-color: white;
 }
 footer .container-content .contact .title {
@@ -929,8 +932,24 @@ footer .container-content .bottom {
   background-image: url(../img/blue-futuristic-networking-technology_53876-100679.avif);
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 
+.up-link {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+  position: relative;
+  transform: translate(0%, 50%);
+}
+.fa-arrow-up {
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 footer .container-content .bottom .location {
   display: flex;
   flex-direction: row;
@@ -967,9 +986,14 @@ footer .container-content .bottom .boxes {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding: 40px 0 0;
 }
 footer .container-content .bottom .boxes .box {
   width: 250px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 footer .container-content .bottom .boxes .box h1 {
   color: white;
@@ -978,6 +1002,22 @@ footer .container-content .bottom .boxes .box h1 {
 footer .container-content .bottom .boxes .box p {
   color: white;
   font-size: 10px;
+}
+.footer-img {
+  width: 80px;
+  /* position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); */
+}
+.footer-img img {
+  width: 100%;
+}
+.space {
+  width: 100%;
+  border-top: 5px solid black;
+  background-color: #343a47;
+  height: 40px;
 }
 /* media */
 @media (max-width: 1100px) {
@@ -1004,9 +1044,105 @@ footer .container-content .bottom .boxes .box p {
   .two .container-content .left-content .hasWork {
     width: 100%;
   }
+  .two .container-content .right-content {
+    width: 100%;
+  }
 }
 @media (max-width: 767px) {
   header nav ul {
     display: none;
+  }
+}
+/* transform */
+header .logo {
+  opacity: 0;
+  animation: entering 1s 0.5s 1 linear forwards;
+}
+header nav ul li:nth-child(1) {
+  opacity: 0;
+  animation: entering 0.9s 0.5s 1 linear forwards;
+}
+header nav ul li:nth-child(2) {
+  opacity: 0;
+  animation: entering 0.7s 0.5s 1 linear forwards;
+}
+header nav ul li:nth-child(3) {
+  opacity: 0;
+  animation: entering 0.6s 0.5s 1 linear forwards;
+}
+header nav ul li:nth-child(4) {
+  opacity: 0;
+  animation: entering 0.5s 0.5s 1 linear forwards;
+}
+header nav ul li:nth-child(5) {
+  opacity: 0;
+  animation: entering 0.4s 0.5s 1 linear forwards;
+}
+header nav ul li:nth-child(6) {
+  opacity: 0;
+  animation: entering 0.3s 0.5s 1 linear forwards;
+}
+header nav ul li:nth-child(7) {
+  opacity: 0;
+  animation: entering 0.2s 0.5s 1 linear forwards;
+}
+header .container-content .careers {
+  transform: translateY(-150%);
+  opacity: 0;
+  animation: entering 0.01s 0.5s 1 linear forwards;
+}
+@keyframes entering {
+  0% {
+    transform: translateY(-450%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.top,
+.one .btns {
+  transform: translatex(-150%);
+  opacity: 0;
+  animation: entering1 1s 0.5s 1 linear forwards;
+}
+@keyframes entering1 {
+  0% {
+    transform: translatex(-150%);
+    opacity: 0;
+  }
+  100% {
+    transform: translatex(0%);
+    opacity: 1;
+  }
+}
+.one .line-icon {
+  opacity: 0;
+  animation: entering2 1s 1 linear forwards;
+}
+@keyframes entering2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.one .bottom h1,
+.one .bottom p {
+  transform: translatey(150%);
+  opacity: 0;
+  animation: entering3 1s 1 linear forwards;
+}
+
+@keyframes entering3 {
+  0% {
+    transform: translatey(150%);
+    opacity: 0;
+  }
+  100% {
+    transform: translatex(0%);
+    opacity: 1;
   }
 }
